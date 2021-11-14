@@ -13,7 +13,6 @@ const Home = () => {
 		third: ""
 	});
 	return (
-		//<div className="container">
 		<Fragment>
 			<TrafficLight
 				light={color.stop}
@@ -66,9 +65,6 @@ const Home = () => {
 				name={name.third}
 			/>
 		</Fragment>
-		//<div className="TrafficBox glowingBox">
-		//</div>
-		//</div>
 	);
 };
 
