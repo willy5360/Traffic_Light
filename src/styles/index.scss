@@ -1,61 +1,126 @@
 @import "~bootstrap/scss/bootstrap.scss";
-
-.container{
-    display: flex;
-    flex-wrap: wrap;
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Orbitron&family=Russo+One&display=swap');
+body{
+    background: url("../img/Black-Abstract-Screenshots.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
     height: 100vh;
+    margin: 0;
+    padding: 0;
+
+}
+.title{
+    color: black;
+    font-family: 'Orbitron', sans-serif;
+    position: relative;
+    width: 50%;
+    margin: 100px auto ;
+    font-size: 45px;
+    text-align: center;
+    background: rgba(255, 255, 255, 1);
+    border-radius: 15px;
+    backdrop-filter: blur(50px);
+
+
+}
+.app{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    margin: 2% auto 0;
+    height: 550px;
+    width: fit-content;
+    background: linear-gradient(45deg , rgb(177, 177, 177), rgb(44,43,43));
+    // backdrop-filter: blur(5px);
     justify-content: center;
     align-items: center;
-    background-color: white;
-    align-self: center;
-    width: 100%;
+    border-radius: 15px;
 }
 
-.TrafficBox{
-    display: flex;
-    flex-direction: column;
-    height: fit-content;
-    width: 200px;
-    background-color: black;
-    justify-content: center;
-    align-items: center;
-
+.glowingBox::before, .glowingBox::after{
+    content: '';
+    position: absolute;
+    border-radius: 15px;
+    left: -5px;
+    top: -5px;
+    background: linear-gradient(45deg, #e6fb04, #ff0000,#00ff66 );
+    background-size: 400%;
+    width: calc(100% + 10px);
+    height: calc(100% + 10px);
+    z-index: -1;
+    animation: animate 20s linear infinite ;     
+}
+@keyframes animate{
+    0%{
+        background-position:0 0 ;
+    }
+    50%{
+        background-position:400% 0 ;
+    }
+    100%{
+        background-position:0 0 ;
+    }
+}
+.glowingBox::after{
+    filter: blur(25px);
 }
 
 .red{
     height: 150px;
     width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 75px;
-    background-color: red;
-    margin: 15px 0; 
+    background: radial-gradient(circle, rgba(255,51,0,1) 0%, rgba(255,102,0,1) 100%);
+    color:white;
+    margin: 15px 15px; 
+    font-size: 25px;
+    font-family: 'Russo One', sans-serif;
 }
 
 .yellow{
     height: 150px;
     width: 150px;
     border-radius: 75px;
-    background-color: yellow;
-    margin: 15px 0; 
-
+    background: radial-gradient(circle, rgba(255,255,166,1) 0%, rgba(233,255,0,1) 100%);    
+    margin: 15px 15px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:black;
+    font-size: 25px;
+    font-family: 'Russo One', sans-serif;
 }
 
 .green{
     height: 150px;
     width: 150px;
     border-radius: 75px;
-    background-color: green;
-    margin: 15px 0; 
-
+    background: radial-gradient(circle, rgba(164,255,90,1) 15%, rgba(69,167,57,1) 100%);
+    margin: 15px 15px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:black;     
+    font-size: 25px;
+    font-family: 'Russo One', sans-serif;
 }
 .empty{
     height: 150px;
     width: 150px;
     border-radius: 75px;
-    background-color: white;
-    margin: 15px 0; 
+    background: linear-gradient(15deg, rgb(34, 34, 34), rgb(82, 82, 82));
+    backdrop-filter: blur(5px);
+    margin: 15px 15px; 
+    z-index: 0; 
 }
 
 .glow{
-    border: 10px solid rgb(255, 255, 255);
+    // border: 10px solid rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    
+
 }
 

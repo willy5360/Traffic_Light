@@ -6,13 +6,16 @@ const TrafficLight = props => {
 		<div
 			className={props.light}
 			onClick={() => {
-				props.addglow(props.light);
-			}}></div>
+				props.addglow(props.light, props.name);
+			}}>
+			{props.name}
+		</div>
 	);
 };
 
 TrafficLight.propTypes = {
 	light: PropTypes.string,
-	addglow: PropTypes.func
+	addglow: PropTypes.func,
+	name: PropTypes.string
 };
 export default TrafficLight;
