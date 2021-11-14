@@ -3,21 +3,20 @@ import TrafficLight from "./trafficLight.jsx";
 
 const Home = () => {
 	const [color, setColor] = useState({
-		stop: "red",
-		slow: "yellow",
-		go: "green"
+		stop: "empty",
+		slow: "empty",
+		go: "empty"
 	});
 	return (
 		<div className="container">
 			<div className="TrafficBox">
-				
 				<TrafficLight
 					light={color.stop}
 					addglow={() => {
 						setColor({
 							stop: "red glow",
-							slow: "yellow",
-							go: "green"
+							slow: "empty",
+							go: "empty"
 						});
 					}}
 				/>
@@ -26,9 +25,9 @@ const Home = () => {
 					light={color.slow}
 					addglow={() => {
 						setColor({
-							stop: "red",
+							stop: "empty",
 							slow: "yellow glow",
-							go: "green"
+							go: "empty"
 						});
 					}}
 				/>
@@ -37,8 +36,8 @@ const Home = () => {
 					light={color.go}
 					addglow={() => {
 						setColor({
-							stop: "red",
-							slow: "yellow ",
+							stop: "empty",
+							slow: "empty ",
 							go: "green glow"
 						});
 					}}
